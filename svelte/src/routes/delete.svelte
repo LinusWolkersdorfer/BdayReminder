@@ -10,14 +10,16 @@
             headers: { "Content-Type": "application/json" }
         });
 
+        value = ""
         response = await res.json();
     }
 </script>
 
 <h1>Delete BDay</h1>
 
-<input bind:value placeholder="ID eingeben…" />
-
+<input bind:value placeholder="ID" style="width: 200px;"/>
+<br/>
+<br/>
 <button on:click={sendToBackend}>Abschicken</button>
 
 {#if response}

@@ -16,8 +16,9 @@
 
 <h1>Get BDay by ID</h1>
 
-<input bind:value placeholder="ID eingeben…" />
-
+<input bind:value placeholder="ID" style="width: 200px;"/>
+<br/>
+<br/>
 <button on:click={sendToBackend}>Abschicken</button>
 
 {#if response}

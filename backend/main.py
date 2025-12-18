@@ -1,5 +1,5 @@
-from fastapi import FastAPI, Depends, HTTPException # pyright: ignore[reportMissingImports]
-from datetime import date
+from fastapi import FastAPI, Depends, HTTPException, Query # pyright: ignore[reportMissingImports]
+from datetime import date, timedelta
 from contextlib import asynccontextmanager
 from sqlmodel import Session, select # pyright: ignore[reportMissingImports]
 
@@ -23,6 +23,41 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/bdays/upcoming")
+def get_upcoming_birthdays(
+    days: int = Query(31, ge=1, le=365),
+    session: Session = Depends(get_session)
+):
+    today = date.today()
+    end_date = today + timedelta(days=days)
+
+    bdays = session.query(Bday).all()
+    result = []
+
+    for b in bdays:
+        # Geburtstag dieses Jahr
+        next_bday = b.birthday.replace(year=today.year)
+
+        # falls schon vorbei → nächstes Jahr
+        if next_bday < today:
+            next_bday = next_bday.replace(year=today.year + 1)
+
+        if today <= next_bday <= end_date:
+            result.append({
+                "id": b.id,
+                "first_name": b.first_name,
+                "last_name": b.last_name,
+                "birthday": b.birthday,
+                "next_birthday": next_bday,
+                "in_days": (next_bday - today).days
+            })
+
+    # 🔑 HIER DIE SORTIERUNG
+    result.sort(key=lambda x: x["in_days"])
+
+    return result
 
 
 @app.get("/bdays")

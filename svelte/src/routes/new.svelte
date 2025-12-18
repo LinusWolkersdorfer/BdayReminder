@@ -16,16 +16,24 @@
                 last_name: last
             })
         });
-
+        bday = "";
+        first = "";
+        last = "";
         response = await res.json();
     }
 </script>
 
 <h1>New BDay</h1>
 
-<input bind:value={bday} placeholder="YYYY-MM-DD" />
-<input bind:value={first} placeholder="Vorname" />
-<input bind:value={last} placeholder="Nachname" />
+<input bind:value={bday} placeholder="YYYY-MM-DD" style="width: 200px;"/>
+<br/>
+<br/>
+<input bind:value={first} placeholder="Vorname" style="width: 200px;"/>
+<br/>
+<br/>
+<input bind:value={last} placeholder="Nachname" style="width: 200px;"/>
+<br/>
+<br/>
 
 <button on:click={sendToBackend}>Abschicken</button>
 
