@@ -1,7 +1,6 @@
 from datetime import date
 from sqlmodel import SQLModel, Field # pyright: ignore[reportMissingImports]
 
-
 class BdayBase(SQLModel):
     birthday: date
     first_name: str
@@ -15,6 +14,6 @@ class Bday(BdayBase, table=True):
 
 
 class BdayCreate(SQLModel):
+    first_name: str
+    last_name: str
     birthday: date
-    first_name: str = Field(..., min_length=1)
-    last_name: str = Field(..., min_length=1)
