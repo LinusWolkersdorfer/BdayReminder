@@ -27,7 +27,7 @@ app.add_middleware(
 
 @app.get("/bdays/upcoming")
 def get_upcoming_birthdays(
-    days: int = Query(31, ge=1, le=365),
+    days: int = Query(31, ge=1, le=31),
     session: Session = Depends(get_session)
 ):
     today = date.today()

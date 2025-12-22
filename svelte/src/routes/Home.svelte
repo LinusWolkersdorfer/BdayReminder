@@ -14,13 +14,11 @@
 
     let age = today.getFullYear() - birth.getFullYear();
 
-    // Geburtstag dieses Jahr
-    const thisYearsBirthday = new Date(
-      today.getFullYear(),
-      birth.getMonth(),
-      birth.getDate()
-    );
-
+    // januar
+    if (dateStr.substring(5, 7) == "01") {
+      age += 1;
+    }
+  
     return age;
   }
 
