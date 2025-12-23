@@ -16,14 +16,15 @@
                 last_name: last
             })
         });
-        bday = "";
-        first = "";
-        last = "";
-        response = await res.json();
+        //bday = "";
+        //first = "";
+        //last = "";
+        //response = await res.json();
+        window.location.href = `#/`;
     }
 </script>
 
-<h1>New BDay</h1>
+<h1>Neuer Eintrag</h1>
 
 <input bind:value={bday} placeholder="YYYY-MM-DD" style="width: 200px;"/>
 <br/>
@@ -37,6 +38,6 @@
 
 <button on:click={sendToBackend}>Abschicken</button>
 
-{#if response}
+<!--{#if response}
     <p>Antwort: {JSON.stringify(response)}</p>
-{/if}
+{/if}-->

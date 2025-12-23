@@ -1,11 +1,11 @@
 <!-- src/Layout.svelte -->
 <nav>
   <a href="#/">Home</a>
-  <a href="#/new">New</a>
-  <a href="#/get">Get</a>
-  <a href="#/get_all">Get All</a>
-  <a href="#/delete">Delete</a>
-  <a href="#/edit">Edit</a>
+  <!--a href="#/new">New</a-->
+  <!--a href="#/get">Get</a-->
+  <!--a href="#/get_all">Get All</a-->
+  <!--a href="#/delete">Delete</a-->
+  <!--a href="#/edit">Edit</a-->
 </nav>
 
 <main>
