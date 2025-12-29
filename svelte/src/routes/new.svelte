@@ -1,7 +1,6 @@
 <!-- src/svelte/routes/new.svelte -->
 <!--POST bdays-->
 <script>
-    let response = "";
     let bday = "";
     let first = "";
     let last = "";

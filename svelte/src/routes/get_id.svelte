@@ -65,8 +65,8 @@
 </script>
 
 {#if entry}
-  <h1>Name: {entry.first_name} {entry.last_name}</h1>
-  <h1>Geburtstag: {transformBday(entry.birthday)}</h1>
+  <h1>{entry.first_name} {entry.last_name}</h1>
+  <h1>{transformBday(entry.birthday)}</h1>
 
   <a href="#/edit/{id}" style="text-decoration: none;">
     <button>Bearbeiten</button>

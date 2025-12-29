@@ -10,6 +10,7 @@
   //import Page5 from './routes/edit.svelte';
   import Page6 from './routes/get_id.svelte';
   import Page7 from './routes/edit_id.svelte';
+  import Page8 from './routes/calendar.svelte';
 
   const routes = {
     '/': Home,
@@ -19,7 +20,8 @@
     //'/delete': Page4,
     //'/edit': Page5
     '/get/:id': Page6,
-    '/edit/:id': Page7
+    '/edit/:id': Page7,
+    '/calendar/': Page8
   }
 </script>
 
