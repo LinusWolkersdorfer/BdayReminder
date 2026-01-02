@@ -19,4 +19,4 @@ cd ../svelte
 npm install
 npm run dev
 
-explorer "http://localhost:$PORT"
+explorer.exe "http://localhost:$PORT"
