@@ -1,4 +1,5 @@
 #!/bin/bash
+PORT=8001
 
 cd backend
 if [ ! -d "venv" ]; then
@@ -17,3 +18,5 @@ uvicorn main:app --reload &
 cd ../svelte
 npm install
 npm run dev
+
+explorer "http://localhost:$PORT"
