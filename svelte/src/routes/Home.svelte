@@ -11,12 +11,15 @@
   function getTurningAge(dateStr) {
     const birth = new Date(dateStr);
     const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
 
     let age = today.getFullYear() - birth.getFullYear();
 
     // januar
     if (dateStr.substring(5, 7) == "01") {
-      age += 1;
+      if(month != "01") {
+        age += 1;
+      }
     }
   
     return age;
